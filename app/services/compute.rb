@@ -21,7 +21,7 @@ class Compute
     rewards  = []
     items.each do |item|
       reward = Reward.new(item.from)
-      if item.accepts?
+      if item.accepts? && requests.find {|req| req.to == item.from}&.status != "finished"
         rewards.push(reward)
         x = requests.find {|req| req.to == item.from}
         x.status = "accepted"
@@ -52,8 +52,8 @@ class Compute
   end
 
   def compute_score (items_to_reward, rewards)
-    items = items_to_reward.split(",")
-    items.each_with_index do |x, index|
+    splitted_items = items_to_reward.split(",")
+    splitted_items.each_with_index do |x, index|
       reward = rewards.find {|r| r.name == x}
       reward.score += 0.5 ** index
     end
