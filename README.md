@@ -1,24 +1,27 @@
-# README
+# Coding Challenge Reward System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+My solution based simply on tow arrays , which we keep into memory while calculation. I dont want to use any database, because i follow this requirements:
+ - Implement the solution using Ruby.
 
-* Ruby version
+I put most the work of this task into services: `app/services`.
+I created tow arrays "requests"  and "rewards" and based on the accepted requests we calculate the score of the reward for each item(member of the system) based on every record in "requests" that have attribute "items_to_reward".And I added some more work about the validation of input data, and parsing it.
+I used only rails to implement this task (for webservice)
+I added some tests for the rewards_controller(rspec)
 
-* System dependencies
+Instructions for setup, tests, run, and you can contact me if you have any questions.
 
-* Configuration
+### Requirements:
+ RUBY VERSION
+   ruby >= 2.5.1
 
-* Database creation
+### Install:
+ - `bundle install`
 
-* Database initialization
+ ### Tests:
+ - `bundle exec rspec`
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Run:
+ - `rails s`
+ - `curl -X POST localhost:3000/rewards --data-binary @input_data.txt -H "Content-Type: text/plain"`
