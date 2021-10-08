@@ -13,12 +13,14 @@ RSpec.describe 'RewardsController', type: :request do
         2018-06-12 09:41 A recommends B
         2018-06-14 09:41 B accepts
         2018-06-16 09:41 B recommends C
+        2018-06-17 09:41 C accepts
+
       REWARD
 
       post '/rewards', params: str, headers: {}
 
       expect(response.status).to eq 200
-      expect(response.body).to eq "{\"A\":1.0}"
+      expect(response.body).to eq "{\"A\":1.5,\"B\":1.0}"
     end
   end
 end
