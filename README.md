@@ -1,4 +1,4 @@
-# Coding Challenge Reward System
+# Reward System
 
 
 My solution based simply on tow arrays , which we keep into memory while calculation. I dont want to use any database, because i follow this requirements:
