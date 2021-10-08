@@ -24,3 +24,7 @@ Instructions for setup, tests, run, and you can contact me if you have any quest
 ### Run:
  - `rails s`
  - `curl -X POST localhost:3000/rewards --data-binary @input_data.txt -H "Content-Type: text/plain"`
+
+
+### link github:
+  `https://github.com/seifeddinhaj/test-assigment`
